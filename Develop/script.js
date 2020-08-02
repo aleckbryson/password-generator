@@ -25,13 +25,13 @@ function generatePassword() {
   var specChar = confirm("Lastly, would you like any Special Characters in your password?");
 
   // this is a minimum count for the variable defined above
-  var minimumCount = 0;
+  var minCount = 0;
 
   // Empty minimums for numbers, lowerCases, upperCases & specialCharacters
-  var minimumNum = "";
-  var minimumLowerCase = "";
-  var minimumUpperCase = "";
-  var minimumSpecChar = "";
+  var minNum = "";
+  var minLowerCase = "";
+  var minUpperCase = "";
+  var minSpecChar = "";
 
 
   // Functions for the generator created
@@ -53,5 +53,31 @@ function generatePassword() {
     }
 
 };
+
+  // Conditionals added based on the user input for the password requirements
+  if (num === true) {
+    minNum = functionArray.getNum();
+    minCount++;
+
+  }
+
+  if (lowerCase === true) {
+    minLowerCase = functionArray.getLowerCase();
+    minCount++;
+
+  }
+
+  if (upperCase === true) {
+    minUpperCase = functionArray.getUpperCase();
+    minCount++;
+
+  }
+
+  if (specChar === true) {
+    minSpecChar = functionArray.getSpecChar();
+    minCount++;
+
+  }
+
 
 }
