@@ -24,10 +24,10 @@ function generatePassword() {
 
   var specChar = confirm("Lastly, would you like any Special Characters in your password?");
 
-  // this is a minimum count for the variable defined above
+  // Variable added
   var minCount = 0;
 
-  // Empty minimums for numbers, lowerCases, upperCases & specialCharacters
+  // Minimums added for the character strings
   var minNum = "";
   var minLowerCase = "";
   var minUpperCase = "";
@@ -78,6 +78,14 @@ function generatePassword() {
     minCount++;
 
   }
+  // String created for the loop below
+  var randomPasswordGenerated = "";
 
+  // For loop created to generate random characters based on the information given and stored
+  for (let i = 0; i < (parseInt(passLength) - minCount); i++) {
+    var randomNumberPicked = Math.floor(Math.random() * 4);
+    randomPasswordGenerated += randomNumberPicked;
+
+  }
 
 }
