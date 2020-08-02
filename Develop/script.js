@@ -1,5 +1,5 @@
 // Special characters for the function created
-const specialCharacters = "!@#$%^&*()";
+const specChar = "!@#$%^&*()";
 const generateButton = document.getElementById('generateBtn')
 generateButton.addEventListener('click', writePassword)
 
@@ -24,9 +24,34 @@ function generatePassword() {
 
   var specChar = confirm("Lastly, would you like any Special Characters in your password?");
 
-  // this is a minimum count for numbers, lowerCases, upperCases & specialCharacters
+  // this is a minimum count for the variable defined above
   var minimumCount = 0;
 
+  // Empty minimums for numbers, lowerCases, upperCases & specialCharacters
+  var minimumNum = "";
+  var minimumLowerCase = "";
+  var minimumUpperCase = "";
+  var minimumSpecChar = "";
 
+
+  // Functions for the generator created
+  var functionArray = {
+    getNum: function() {
+      return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+    },
+
+    getLowerCase: function() {
+      return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+    },
+
+    getUpperCase: function() {
+      return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+    },
+
+    getSpecChar: function() {
+      return specChar[Math.floor(Math.random() * specChar.length)]
+    }
+
+};
 
 }
