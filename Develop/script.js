@@ -79,13 +79,21 @@ function generatePassword() {
 
   }
   // String created for the loop below
-  var randomPasswordGenerated = "";
+  var passGen = "";
 
   // For loop created to generate random characters based on the information given and stored
   for (let i = 0; i < (parseInt(passLength) - minCount); i++) {
-    var randomNumberPicked = Math.floor(Math.random() * 4);
-    randomPasswordGenerated += randomNumberPicked;
+    var charSelection = Math.floor(Math.random() * 4);
+    passGen+= charSelection;
 
   }
+
+  // Characters added to the password and passGen variable has been returned to display passworg
+  passGen += minNum;
+  passGen += minLowerCase;
+  passGen += minUpperCase;
+  passGen += minSpecChar;
+
+  return passGen;
 
 }
