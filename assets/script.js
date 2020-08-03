@@ -15,7 +15,7 @@ function writePassword() {
 // Prompt user regarding password length and whether or not they would any Numbers, Lower/Uppercase letter, and any Special Characters
 function generatePassword() {
   var passLength = prompt("Welcome to the Password Generator! Please enter the amount of characters you want for password. Please note that it must be at least 8 characters and less than 128 characters.");
-
+  // check if they meet criteria 
   var num = confirm("Would you like Numbers in your password?");
 
   var lowerCase = confirm("Would you like Lowercase letters?");
@@ -23,7 +23,7 @@ function generatePassword() {
   var upperCase = confirm("Would you like UpperCase letters?");
 
   var specChar = confirm("Lastly, would you like any Special Characters in your password?");
-
+  // you need to check if they selected at least one character type
   // Variable added
   var minCount = 0;
 
@@ -36,23 +36,23 @@ function generatePassword() {
 
   // Functions for the generator created
   var functionArray = {
-    getNum: function() {
+    getNum: function () {
       return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
     },
 
-    getLowerCase: function() {
+    getLowerCase: function () {
       return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
     },
 
-    getUpperCase: function() {
+    getUpperCase: function () {
       return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
     },
 
-    getSpecChar: function() {
+    getSpecChar: function () {
       return specChar[Math.floor(Math.random() * specChar.length)]
     }
 
-};
+  };
 
   // Conditionals added based on the user input for the password requirements
   if (num === true) {
@@ -84,7 +84,7 @@ function generatePassword() {
   // For loop created to generate random characters based on the information given and stored
   for (let i = 0; i < (parseInt(passLength) - minCount); i++) {
     var charSelection = Math.floor(Math.random() * 4);
-    passGen+= charSelection;
+    passGen += charSelection;
 
   }
 
@@ -97,3 +97,5 @@ function generatePassword() {
   return passGen;
 
 }
+
+
