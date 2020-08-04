@@ -71,8 +71,8 @@ generatePassword ();
 
 // THEN the password is either displayed in an alert or written to the page
 function writePassword() {
-    var password = generatePassword();
+    var pass = generatePassword();
     var passwordText = document.querySelector("#password");
     
-    passwordText.value = password;
+    passwordText.value = pass;
 }
